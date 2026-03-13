@@ -1,0 +1,20 @@
+# robots.txt لبصمة ملخص
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /backup/
+
+# تحسين الزحف
+Crawl-delay: 1
+
+# تحديد ملف Sitemap
+Sitemap: https://www.basmat-mulakhis.com/sitemap.xml
+
+# منع الزحف لصفحات معينة
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /

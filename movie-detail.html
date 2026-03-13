@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بصمة ملخص | تفاصيل</title>
+    
+    <!-- تحسينات SEO -->
+    <meta name="description" content="ملخصات أفلام ومسلسلات أصلية 100%">
+    <meta name="keywords" content="ملخصات أفلام, ملخصات مسلسلات, مراجعات أفلام">
+    <meta name="author" content="بصمة ملخص">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="بصمة ملخص">
+    <meta property="og:locale" content="ar_SA">
+    
+    <!-- Canonical URL (سيتم تحديثه بالجافاسكريبت) -->
+    <link rel="canonical" id="canonical" href="https://ahmedrashadali7.github.io/basmah-mulakhas/movie-detail.html">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .loading-spinner {
+            text-align: center;
+            padding: 3rem;
+        }
+        .loading-spinner i {
+            font-size: 3rem;
+            color: #ffb347;
+            animation: spin 1s linear infinite;
+        }
+        .loading-spinner p {
+            margin-top: 1rem;
+            color: #8888aa;
+        }
+        .error-container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 2rem;
+        }
+        .error-container i {
+            font-size: 4rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+        .error-container h2 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+        .error-container p {
+            color: #8888aa;
+            margin-bottom: 2rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="site-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-area">
+                <div class="logo">
+                    <i class="fas fa-clapperboard"></i> بصمة
+                </div>
+                <div class="logo-sub">ملخص • أصالة • إبداع</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="movies.html" class="nav-item">
+                    <i class="fas fa-film"></i>
+                    <span>أفلام</span>
+                </a>
+                <a href="tvshows.html" class="nav-item">
+                    <i class="fas fa-tv"></i>
+                    <span>مسلسلات</span>
+                </a>
+                <a href="top-rated.html" class="nav-item">
+                    <i class="fas fa-star"></i>
+                    <span>الأكثر تقييماً</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>عن الموقع</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <i class="fas fa-copyright"></i> 2026 بصمة ملخص
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="back-button">
+                <a href="javascript:history.back()" class="btn-back">
+                    <i class="fas fa-arrow-right"></i> العودة
+                </a>
+            </div>
+
+            <div class="movie-detail-container" id="movieDetail">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>جاري تحميل التفاصيل...</p>
+                </div>
+            </div>
+
+            <div class="scroll-top" id="scrollTop">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+        </main>
+    </div>
+
+    <!-- ملفات JavaScript -->
+    <script src="js/movies-data.js"></script>
+    <script src="js/tvshows-data.js"></script>
+    <script src="js/main-data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/social.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // GitHub Pages: نستخدم query string فقط
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieId = urlParams.get('id');
+            
+            console.log('📌 معرف الفيلم:', movieId);
+            
+            if (movieId && typeof loadMovieDetails === 'function') {
+                loadMovieDetails(movieId);
+            } else {
+                console.error('❌ لا يوجد معرف فيلم');
+                document.getElementById('movieDetail').innerHTML = `
+                    <div class="error-container">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h2>الفيلم غير موجود</h2>
+                        <p>عذراً، لم نتمكن من العثور على الفيلم المطلوب</p>
+                        <a href="index.html" class="btn-back" style="background: #ffb347; color: #0a0a12; padding: 0.8rem 2rem; border-radius: 2rem; text-decoration: none; display: inline-block;">
+                            <i class="fas fa-home"></i> العودة للرئيسية
+                        </a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بصمة ملخص | الرئيسية</title>
+    
+    <!-- تحسينات SEO -->
+    <meta name="description" content="ملخصات أصلية للأفلام والمسلسلات بأسلوب قصصي جذاب - أكثر من 500 كلمة لكل ملخص">
+    <meta name="keywords" content="ملخصات أفلام, ملخصات مسلسلات, مراجعات أفلام, نقد سينمائي, بصمة ملخص">
+    <meta name="author" content="بصمة ملخص">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="بصمة ملخص - ملخصات أفلام ومسلسلات أصلية">
+    <meta property="og:description" content="ملخصات أصلية للأفلام والمسلسلات بأسلوب قصصي جذاب">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="بصمة ملخص">
+    <meta property="og:locale" content="ar_SA">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* تحميل سريع مؤقت */
+        .initial-loading {
+            text-align: center;
+            padding: 3rem;
+        }
+        .initial-loading i {
+            font-size: 3rem;
+            color: #ffb347;
+            animation: spin 1s linear infinite;
+        }
+        .initial-loading p {
+            margin-top: 1rem;
+            color: #8888aa;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- أيقونة القائمة للهاتف -->
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <!-- طبقة التعتيم -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="site-wrapper">
+        <!-- الشريط الجانبي -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-area">
+                <div class="logo">
+                    <i class="fas fa-clapperboard"></i> بصمة
+                </div>
+                <div class="logo-sub">ملخص • أصالة • إبداع</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="movies.html" class="nav-item">
+                    <i class="fas fa-film"></i>
+                    <span>أفلام</span>
+                </a>
+                <a href="tvshows.html" class="nav-item">
+                    <i class="fas fa-tv"></i>
+                    <span>مسلسلات</span>
+                </a>
+                <a href="top-rated.html" class="nav-item">
+                    <i class="fas fa-star"></i>
+                    <span>الأكثر تقييماً</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>عن الموقع</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <i class="fas fa-copyright"></i> 2026 بصمة ملخص<br>
+                جميع الملخصات أصلية 100%
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <!-- الهيدر العلوي -->
+            <div class="top-header">
+                <h1 class="page-title">
+                    <i class="fas fa-magic" style="color: #ffb347;"></i> 
+                    أحدث الملخصات
+                </h1>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="ابحث عن فيلم أو مسلسل...">
+                </div>
+            </div>
+
+            <!-- إحصائيات سريعة -->
+            <div class="stats" id="statsContainer">
+                <div class="stat-card">
+                    <i class="fas fa-film"></i>
+                    <div class="stat-info">
+                        <h4 id="movieCount">0</h4>
+                        <p>فيلم</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tv"></i>
+                    <div class="stat-info">
+                        <h4 id="tvCount">0</h4>
+                        <p>مسلسل</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-info">
+                        <h4 id="avgRating">0</h4>
+                        <p>متوسط التقييم</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أقسام سريعة -->
+            <div class="quick-sections">
+                <a href="movies.html" class="quick-card">
+                    <i class="fas fa-film"></i>
+                    <h3>أفلام</h3>
+                    <p>استعرض أحدث ملخصات الأفلام</p>
+                </a>
+                <a href="tvshows.html" class="quick-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>مسلسلات</h3>
+                    <p>ملخصات حصرية للمسلسلات</p>
+                </a>
+                <a href="top-rated.html" class="quick-card">
+                    <i class="fas fa-star"></i>
+                    <h3>الأكثر تقييماً</h3>
+                    <p>أفضل الملخصات حسب تقييمكم</p>
+                </a>
+            </div>
+
+            <!-- شبكة بطاقات الأفلام والمسلسلات -->
+            <h2 class="section-title">
+                <i class="fas fa-fire"></i> أحدث الإضافات
+            </h2>
+            <div class="movies-grid" id="moviesContainer">
+                <div class="initial-loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>جاري تحميل المحتوى...</p>
+                </div>
+            </div>
+
+            <!-- زر العودة للأعلى -->
+            <div class="scroll-top" id="scrollTop">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== ملفات JavaScript - الترتيب مهم جداً! ===== -->
+    
+    <!-- 1️⃣ أولاً: ملفات البيانات -->
+    <script src="js/movies-data.js"></script>
+    <script src="js/tvshows-data.js"></script>
+    
+    <!-- 2️⃣ ثانياً: ملف دمج البيانات (يعتمد على الملفين السابقين) -->
+    <script src="js/main-data.js"></script>
+    
+    <!-- 3️⃣ ثالثاً: ملفات الوظائف -->
+    <script src="js/ui.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/social.js"></script>
+    
+    <!-- 4️⃣ أخيراً: الملف الرئيسي -->
+    <script src="js/main.js"></script>
+    
+    <!-- 5️⃣ سكريبت إضافي للتأكد من تحميل الصفحة -->
+    <script>
+        // تأكد من أن الدوال موجودة قبل استخدامها
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ الصفحة الرئيسية تحمّلت');
+            console.log('📊 MovieDB موجود؟', typeof MovieDB !== 'undefined');
+            console.log('🎬 renderMovies موجودة؟', typeof renderMovies === 'function');
+            
+            // إذا كانت الدالة غير موجودة، حاول مرة أخرى بعد قليل
+            if (typeof renderMovies !== 'function') {
+                console.log('⏳ انتظر قليلاً...');
+                setTimeout(function() {
+                    if (typeof renderMovies === 'function') {
+                        renderMovies();
+                    }
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>

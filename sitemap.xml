@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/movies.html</loc>
+        <priority>0.9</priority>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/tvshows.html</loc>
+        <priority>0.9</priority>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/top-rated.html</loc>
+        <priority>0.8</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/about.html</loc>
+        <priority>0.5</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <!-- روابط الأفلام -->
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/movie/inception-2010</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/movie/oppenheimer-2023</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/movie/the-dark-knight-2008</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/movie/interstellar-2014</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    
+    <!-- روابط المسلسلات -->
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/movie/game-of-thrones</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://basmah-mulakhas.netlify.app/movie/breaking-bad</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+</urlset>
